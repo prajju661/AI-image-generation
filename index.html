@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DreamForge AI | Transform Text to Hyper-Realistic AI Art & Images</title>
+  <meta name="description" content="Ignite your imagination with DreamForge AI. Create stunning, high-fidelity, hyper-realistic, or stylized artwork in seconds from simple text prompts.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DreamForge AI - Transform Text to Hyper-Realistic Art">
+  <meta property="og:description" content="Generate stunning, high-fidelity images in seconds from simple text prompts using the next-generation AI image engine.">
+  <meta property="og:image" content="assets/hero_showcase.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="DreamForge AI - Transform Text to Hyper-Realistic Art">
+  <meta property="twitter:description" content="Generate stunning, high-fidelity images in seconds from simple text prompts using the next-generation AI image engine.">
+  <meta property="twitter:image" content="assets/hero_showcase.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header id="main-header" class="header">
+    <div class="container header-container">
+      <a href="#" class="logo" id="nav-logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="url(#logo-grad-1)"/>
+          <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="url(#logo-grad-2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="logo-grad-1" x1="2" y1="7" x2="22" y2="7" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00f2fe" />
+              <stop offset="100%" stop-color="#4facfe" />
+            </linearGradient>
+            <linearGradient id="logo-grad-2" x1="2" y1="17" x2="22" y2="17" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#4facfe" />
+              <stop offset="100%" stop-color="#9b51e0" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">DreamForge<span class="text-glow">AI</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#features" class="nav-link" id="link-features">Features</a>
+        <a href="#sandbox" class="nav-link" id="link-sandbox">Playground</a>
+        <a href="#gallery" class="nav-link" id="link-gallery">Showcase</a>
+        <a href="#pricing" class="nav-link" id="link-pricing">Pricing</a>
+        <a href="#faq" class="nav-link" id="link-faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#sandbox" class="btn btn-outline hide-mobile" id="btn-login">Sign In</a>
+        <a href="#pricing" class="btn btn-primary" id="btn-signup">Generate Free</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge-container">
+          <span class="hero-badge">✨ Next Generation Model V3.5 is Live</span>
+        </div>
+        <h1 class="hero-title">Transform Words into <span class="gradient-text">Breathtaking Art</span> in Seconds</h1>
+        <p class="hero-subtitle">DreamForge AI is the next-generation image generation engine. Create high-fidelity, hyper-realistic, or stunning stylized images from simple text prompts.</p>
+        
+        <div class="hero-actions">
+          <a href="#sandbox" class="btn btn-primary btn-lg" id="hero-cta-primary">
+            Start Generating Free
+            <svg class="icon-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a href="#gallery" class="btn btn-secondary btn-lg" id="hero-cta-secondary">Explore Gallery</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="stat-images">5M+</span>
+            <span class="stat-label">Images Created</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat-users">120K+</span>
+            <span class="stat-label">Active Artists</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat-speed">1.8s</span>
+            <span class="stat-label">Generation Speed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <div class="hero-glow"></div>
+        <div class="hero-card">
+          <img src="assets/hero_showcase.png" alt="DreamForge AI generated stunning mystical cosmic dragon" class="hero-main-img" id="hero-img">
+          <div class="hero-overlay-card top-left">
+            <div class="user-avatar">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div>
+              <p class="overlay-prompt">"Mystical stardust dragon..."</p>
+              <p class="overlay-sub">Style: Cinematic Cosmic</p>
+            </div>
+          </div>
+          <div class="hero-overlay-card bottom-right">
+            <div class="active-badge"></div>
+            <span>Generation Complete in 1.4s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Sandbox / Playground Section -->
+  <section class="sandbox-section" id="sandbox">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">interactive playground</span>
+        <h2 class="section-title">Experience the Magic Live</h2>
+        <p class="section-desc">Try out our interactive playground below. Select a preset prompt, choose your favorite style, and click generate to witness the rendering process.</p>
+      </div>
+
+      <div class="sandbox-grid">
+        <!-- Workbench Controls -->
+        <div class="sandbox-controls">
+          <div class="control-group">
+            <label class="control-label">Select a Preset Prompt Idea</label>
+            <div class="prompt-chips" id="prompt-chips">
+              <button class="chip active" data-prompt="A futuristic cyberpunk street with glowing neon storefront signs, rain reflections on asphalt, sleek hovercar parked, high-tech cinematic style, photorealistic, 8k resolution" data-style="cinematic">🌆 Cyberpunk City</button>
+              <button class="chip" data-prompt="A majestic floating castle in the sky, huge waterfalls pouring into clouds, soft pink sunset, fantasy digital art, highly detailed, magical lighting" data-style="fantasy">🏰 Sky Castle</button>
+              <button class="chip" data-prompt="Stunning anime style illustration of a girl looking at a giant colorful cosmic galaxy in the night sky, stars, magical atmosphere, Makoto Shinkai style, high detail" data-style="anime">🌌 Cosmic Anime</button>
+              <button class="chip" data-prompt="A cute explorer robot gardener watering a glowing bioluminescent plant on Mars, Pixar style 3D render, soft ambient lighting, vibrant cosmic colors" data-style="3d">🤖 Mars Robot</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="prompt-input" class="control-label">Your Custom Prompt</label>
+            <textarea id="prompt-input" class="prompt-textarea" placeholder="Describe the masterpiece you want to create..."></textarea>
+          </div>
+
+          <div class="control-row">
+            <div class="control-group flex-1">
+              <label class="control-label">Render Style</label>
+              <div class="style-select-grid" id="style-select-grid">
+                <button class="style-btn active" data-style="cinematic">
+                  <div class="style-preview cinematic-preview"></div>
+                  <span>Cinematic</span>
+                </button>
+                <button class="style-btn" data-style="fantasy">
+                  <div class="style-preview fantasy-preview"></div>
+                  <span>Fantasy Art</span>
+                </button>
+                <button class="style-btn" data-style="anime">
+                  <div class="style-preview anime-preview"></div>
+                  <span>Anime</span>
+                </button>
+                <button class="style-btn" data-style="3d">
+                  <div class="style-preview render-preview"></div>
+                  <span>3D Render</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="control-row">
+            <div class="control-group flex-1">
+              <label class="control-label">Aspect Ratio</label>
+              <div class="ratio-selectors" id="ratio-selectors">
+                <button class="ratio-btn active" data-ratio="1:1">
+                  <div class="ratio-box square"></div>
+                  <span>1:1 Square</span>
+                </button>
+                <button class="ratio-btn" data-ratio="16:9">
+                  <div class="ratio-box landscape"></div>
+                  <span>16:9 Landscape</span>
+                </button>
+                <button class="ratio-btn" data-ratio="9:16">
+                  <div class="ratio-box portrait"></div>
+                  <span>9:16 Portrait</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-block btn-lg btn-generate" id="btn-generate-art">
+            <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.32 11.32l.707-.707M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/>
+            </svg>
+            <span>Generate Art</span>
+          </button>
+        </div>
+
+        <!-- Canvas Output Display -->
+        <div class="sandbox-display">
+          <div class="display-card">
+            <div class="canvas-container" id="canvas-container">
+              <img src="assets/playground_cinematic.png" alt="AI Generated Output Preview" class="canvas-image" id="canvas-image">
+              
+              <!-- Loader overlay -->
+              <div class="canvas-loader" id="canvas-loader">
+                <div class="loader-content">
+                  <div class="spinner"></div>
+                  <p class="loader-status-text" id="loader-status">Forging pixels...</p>
+                  <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                  </div>
+                  <span class="progress-percent" id="progress-percent">0%</span>
+                </div>
+                <div class="scanline"></div>
+              </div>
+            </div>
+
+            <div class="canvas-footer">
+              <div class="seed-info">
+                <span>Seed: <strong id="output-seed">892471902</strong></span>
+                <span>•</span>
+                <span>Sampler: <strong>Euler a</strong></span>
+                <span>•</span>
+                <span>Steps: <strong>25</strong></span>
+              </div>
+              <div class="canvas-actions">
+                <button class="canvas-action-btn" id="btn-copy-prompt" title="Copy Prompt">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+                <button class="canvas-action-btn" id="btn-download-img" title="Download Image">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Cutting Edge Capabilities</span>
+        <h2 class="section-title">Designed for Creators & Professionals</h2>
+        <p class="section-desc">Unlock advanced AI tools crafted to match your design workflow. Speed up production and create without boundaries.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M3 20v-8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8M13 20V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v16"/></svg>
+          </div>
+          <h3>Next-Gen Model Engine</h3>
+          <p>Trained on billions of high-quality images. Understands granular art styles, lighting settings, and complex compositional commands.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3>Image-to-Image Remixing</h3>
+          <p>Provide a source image as a reference layout or style, and steer it with prompts to generate customized variations.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4z"/></svg>
+          </div>
+          <h3>Advanced Inpainting</h3>
+          <p>Brush out unwanted elements or add new objects with surgical precision. Modify your canvases dynamically using text prompts.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+          </div>
+          <h3>Uncapped 8K Upscaling</h3>
+          <p>Enhance details, fix noise patterns, and export crystal-clear prints up to 8K resolution without losing fidelity.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Custom Fine-tuning</h3>
+          <p>Upload a small set of photos to train custom sub-models on specific faces, products, or signature artistic illustration styles.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+          <h3>Team Workspace & API</h3>
+          <p>Collaborate in shared team folders, manage licenses, and integrate image generation directly into your own applications with our API.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Showcase -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Community Masterpieces</span>
+        <h2 class="section-title">Forged by DreamForge Artists</h2>
+        <p class="section-desc">Browse incredible creations generated by our community. Hover to inspect prompts and styles used.</p>
+      </div>
+
+      <!-- Gallery Filter tabs -->
+      <div class="gallery-filters">
+        <button class="filter-tab active" data-filter="all">All Styles</button>
+        <button class="filter-tab" data-filter="cinematic">Cinematic</button>
+        <button class="filter-tab" data-filter="fantasy">Fantasy</button>
+        <button class="filter-tab" data-filter="anime">Anime</button>
+        <button class="filter-tab" data-filter="3d">3D Render</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Card 1 -->
+        <div class="gallery-card" data-category="cinematic">
+          <img src="assets/playground_cinematic.png" alt="Cyberpunk neon city street model" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="overlay-details">
+              <span class="gallery-cat-badge">Cinematic</span>
+              <p class="gallery-prompt">"A futuristic cyberpunk street with glowing neon storefront signs, rain reflections..."</p>
+              <button class="btn btn-xs btn-primary btn-copy-gallery" data-prompt="A futuristic cyberpunk street with glowing neon storefront signs, rain reflections on asphalt, sleek hovercar parked, high-tech cinematic style, photorealistic, 8k resolution">
+                Copy Prompt
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="gallery-card" data-category="fantasy">
+          <img src="assets/playground_fantasy.png" alt="Floating sky castle fantasy artwork" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="overlay-details">
+              <span class="gallery-cat-badge">Fantasy</span>
+              <p class="gallery-prompt">"A majestic floating castle in the sky, huge waterfalls pouring into clouds, soft pink sunset..."</p>
+              <button class="btn btn-xs btn-primary btn-copy-gallery" data-prompt="A majestic floating castle in the sky, huge waterfalls pouring into clouds, soft pink sunset, fantasy digital art, highly detailed, magical lighting">
+                Copy Prompt
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-card" data-category="anime">
+          <img src="assets/playground_anime.png" alt="Anime galaxy stargazing artwork" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="overlay-details">
+              <span class="gallery-cat-badge">Anime</span>
+              <p class="gallery-prompt">"Stunning anime style illustration of a girl looking at a giant colorful cosmic galaxy..."</p>
+              <button class="btn btn-xs btn-primary btn-copy-gallery" data-prompt="Stunning anime style illustration of a girl looking at a giant colorful cosmic galaxy in the night sky, stars, magical atmosphere, Makoto Shinkai style, high detail">
+                Copy Prompt
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="gallery-card" data-category="3d">
+          <img src="assets/playground_3d.png" alt="3D cute explorer robot gardener illustration" class="gallery-img">
+          <div class="gallery-overlay">
+            <div class="overlay-details">
+              <span class="gallery-cat-badge">3D Render</span>
+              <p class="gallery-prompt">"A cute explorer robot gardener watering a glowing bioluminescent plant on Mars..."</p>
+              <button class="btn btn-xs btn-primary btn-copy-gallery" data-prompt="A cute explorer robot gardener watering a glowing bioluminescent plant on Mars, Pixar style 3D render, soft ambient lighting, vibrant cosmic colors">
+                Copy Prompt
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Flexible Subscriptions</span>
+        <h2 class="section-title">Ignite Your Creativity</h2>
+        <p class="section-desc">Start for free and upgrade as your production scales. Cancel or modify your tier at any time.</p>
+        
+        <!-- Toggle -->
+        <div class="billing-toggle-container">
+          <span class="billing-label" id="label-monthly">Monthly</span>
+          <button class="billing-toggle" id="billing-toggle" aria-label="Toggle Billing Interval">
+            <span class="toggle-circle"></span>
+          </button>
+          <span class="billing-label" id="label-yearly">Yearly <span class="discount-badge">Save 20%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Plan 1 -->
+        <div class="pricing-card">
+          <div class="card-header">
+            <h3>Starter</h3>
+            <p>Perfect for testing parameters & prototyping ideas.</p>
+            <div class="price-container">
+              <span class="price-symbol">$</span>
+              <span class="price-value" id="price-starter">0</span>
+              <span class="price-duration" id="duration-starter">/mo</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              100 credits/mo (~100 images)
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Standard generation speed
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Model v3.0 standard models
+            </li>
+            <li class="disabled">
+              <svg class="cross-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Uncapped 8K upscaling
+            </li>
+            <li class="disabled">
+              <svg class="cross-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Custom model fine-tuning
+            </li>
+          </ul>
+          <a href="#sandbox" class="btn btn-outline btn-block">Get Started</a>
+        </div>
+
+        <!-- Plan 2 -->
+        <div class="pricing-card popular">
+          <div class="popular-tag">MOST POPULAR</div>
+          <div class="card-header">
+            <h3>Pro Artist</h3>
+            <p>Built for content creators, designers, and agencies.</p>
+            <div class="price-container">
+              <span class="price-symbol">$</span>
+              <span class="price-value" id="price-pro">19</span>
+              <span class="price-duration" id="duration-pro">/mo</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Unlimited</strong> basic generations
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              1200 fast generation credits
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Access to v3.5 ultra-models
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Uncapped 8K upscaling
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              3 custom trained fine-tunes
+            </li>
+          </ul>
+          <a href="#sandbox" class="btn btn-primary btn-block">Unlock Pro Now</a>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="pricing-card">
+          <div class="card-header">
+            <h3>Enterprise</h3>
+            <p>For studios and corporate scaling pipelines.</p>
+            <div class="price-container">
+              <span class="price-symbol">$</span>
+              <span class="price-value" id="price-enterprise">49</span>
+              <span class="price-duration" id="duration-enterprise">/mo</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <strong>Unlimited</strong> fast generations
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Dedicated render nodes / API access
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom model setups & enterprise API
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority 24/7 technical support
+            </li>
+            <li>
+              <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited custom fine-tunes
+            </li>
+          </ul>
+          <a href="mailto:enterprise@dreamforgeai.com" class="btn btn-outline btn-block">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordion) -->
+  <section class="faq-section" id="faq">
+    <div class="container faq-container">
+      <div class="section-header">
+        <span class="section-tag">Common Queries</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Got questions about credits, usage licenses, or outputs? We've got answers.</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item">
+          <button class="faq-trigger" id="faq-trigger-1" aria-expanded="false">
+            <span>How does the image generation credit system work?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-panel" id="faq-panel-1">
+            <p>Every generated image costs one credit. On the Starter plan, you receive 100 free credits monthly. Pro users receive 1200 high-priority fast generation credits every month, and once those are depleted, can still generate unlimited images at standard processing speeds.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" id="faq-trigger-2" aria-expanded="false">
+            <span>Do I own the copyrights to the images I generate?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-panel" id="faq-panel-2">
+            <p>Yes! All generations created on DreamForge AI are fully owned by you. You hold complete commercial exploitation rights to sell, print, or use the generated artwork in games, advertising campaigns, and publications.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" id="faq-trigger-3" aria-expanded="false">
+            <span>What are custom fine-tuned models?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-panel" id="faq-panel-3">
+            <p>Fine-tuning allows you to upload between 10 to 20 reference photos (like a product line, a specific character, or a unique style). DreamForge trains a specialized sub-model in ~15 minutes so you can render consistent variations in that exact signature look.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" id="faq-trigger-4" aria-expanded="false">
+            <span>Can I integrate DreamForge into my own app via API?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-panel" id="faq-panel-4">
+            <p>Absolutely. Our Enterprise plan provides high-throughput API keys with fully documented REST endpoints, webhooks, and SDKs. Average image delivery times via the API is 1.2 seconds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA & Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-cta-card">
+          <div class="cta-glow"></div>
+          <h2>Ready to Forge the Future of Art?</h2>
+          <p>Join over 120,000 artists, designers, and prompt engineers crafting gorgeous visual assets every day.</p>
+          
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" class="email-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary" id="btn-subscribe">Get Invitation</button>
+          </form>
+          <p class="subscription-status" id="subscription-status"></p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#00f2fe"/>
+              <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="#4facfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="logo-text">DreamForge<span class="text-glow">AI</span></span>
+          </a>
+          <p class="brand-pitch">Synthesizing pure imagination into crystal clear reality. Create assets, logos, environments, and portraits instantly.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Discord">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Engine</h4>
+          <ul>
+            <li><a href="#sandbox">Web Playground</a></li>
+            <li><a href="#pricing">Pricing Plans</a></li>
+            <li><a href="#features">Custom Models</a></li>
+            <li><a href="#gallery">Community Art</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Developers</h4>
+          <ul>
+            <li><a href="#">API Docs</a></li>
+            <li><a href="#">System Status</a></li>
+            <li><a href="#">Python SDK</a></li>
+            <li><a href="#">GitHub Repo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DreamForge AI Inc. Crafted with pure imagination. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>

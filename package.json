@@ -1,0 +1,14 @@
+{
+  "name": "dreamforge-ai-landing-page",
+  "version": "1.0.0",
+  "description": "Premium landing page for DreamForge AI Image Generator",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
