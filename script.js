@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnDownloadImg.addEventListener('click', () => {
     const link = document.createElement('a');
     link.href = canvasImage.src;
-    link.download = `dreamforge-${selectedStyle}-${selectedRatio.replace(':', '-')}.png`;
+    link.download = `ai-world-${selectedStyle}-${selectedRatio.replace(':', '-')}.png`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

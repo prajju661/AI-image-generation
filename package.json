@@ -1,7 +1,7 @@
 {
-  "name": "dreamforge-ai-landing-page",
+  "name": "ai-world-landing-page",
   "version": "1.0.0",
-  "description": "Premium landing page for DreamForge AI Image Generator",
+  "description": "Premium landing page for AI World Image Generator",
   "main": "index.html",
   "scripts": {
     "dev": "vite",
