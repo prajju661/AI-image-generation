@@ -1,6 +1,6 @@
 # AI WORLD Landing Page
 
-This is a premium, interactive landing page for **AI WORLD**, a next-generation AI SaaS platform designed to generate high-fidelity, hyper-realistic, or stylized artwork in seconds from simple text prompts.
+This is a premium, interactive landing page for **AI WORLD**, a next-generation AI SaaS platform designed to generate high-fidelity image, hyper-realistic, or stylized artwork in seconds from simple text prompts.
 
 ## Key Features
 - **Modern Design & Animations**: Sleek dark-mode, cosmic-cyberpunk color system (deep indigo, neon cyan, electric purple), glassmorphism cards, and interactive hover states.
